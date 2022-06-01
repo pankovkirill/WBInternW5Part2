@@ -60,7 +60,7 @@ class HeroFragment : Fragment() {
     }
 
     private fun initViewModel() {
-        viewModel.subscribe().observe(viewLifecycleOwner) { renderData(it) }
+        viewModel.liveDataForViewToObserve.observe(viewLifecycleOwner) { renderData(it) }
 
         val name = arguments?.getString(KEY)
         name?.let { viewModel.getData(it) }

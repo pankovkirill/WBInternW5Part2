@@ -17,9 +17,7 @@ class HeroViewModel(
 ) : ViewModel() {
     private val _data = MutableLiveData<AppState>()
 
-    private val liveDataForViewToObserve: LiveData<AppState> = _data
-
-    fun subscribe() = liveDataForViewToObserve
+    val liveDataForViewToObserve: LiveData<AppState> = _data
 
     fun getData(name: String) {
         _data.postValue(AppState.Loading)
